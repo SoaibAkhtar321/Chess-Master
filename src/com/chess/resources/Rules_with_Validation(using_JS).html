@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Chess: implemented rules</title>
+    <title>Chess: Implemented Rules</title>
     <style>
         body { font-family: "Courier New"; padding: 50px; width: 1024px; margin: auto; box-sizing: border-box; }
         li { padding: 0.8em; }
-        div { float left; box-sizing: border-box;}
+        div { float: left; box-sizing: border-box; }
         h1, h2, h3 { width: 100%; clear: both; }
-        .halfbox { width: 50%; float: left; padding: 15px;}
+        .halfbox { width: 50%; float: left; padding: 15px; }
         img { max-width: 100%; max-height: 100%; display: block; float:left; clear: both; }
         .img-col-small { width: 150px; float: left; clear: both; }
-        .txt-col-small {padding-left: 150px;}
+        .txt-col-small { padding-left: 150px; }
         .img-col-medium { width: 220px; float: left; clear: right; }
-        .txt-col-medium {padding-left: 220px;}
+        .txt-col-medium { padding-left: 220px; }
         .img-col-wider { width: 280px; float: left; clear: right; }
-        .txt-col-wider {padding-left: 280px;}
+        .txt-col-wider { padding-left: 280px; }
 
         @media only screen and (max-width: 1024px) {
             .halfbox { width: 100%; }
@@ -24,7 +24,7 @@
 </head>
 
 <body>
-<h1>Following rules are implemented:</h1>
+<h1>Implemented Chess Rules</h1>
 
 <!-- Form -->
 <h2>Register</h2>
@@ -47,111 +47,106 @@
 
 <div id="formMessage"></div>
 
-<h2>General rule sets</h2>
+<h2>General Rule Sets</h2>
 <div class="halfbox">
-    <img src="chess_screenshots_manual_start.png" alt="start situation">
+    <img src="chess_screenshots_manual_start.png" alt="Start Situation">
 </div>
 <div class="halfbox">
-    <h3>start of the game</h3>
+    <h3>Start of the Game</h3>
     <ul>
-        <li>player with white pieces starts.</li>
-        <li>the start situation will determine the move direction of pieces. (specifically pawns)</li>
+        <li>The player with white pieces starts.</li>
+        <li>The starting situation determines the move direction of pieces, specifically pawns.</li>
     </ul>
 </div>
 
 <div class="halfbox">
-    <h3>during the game</h3>
+    <h3>During the Game</h3>
     <ul>
-        <li>a piece can be hit if another piece is moved onto that specific field. (exception: en passant move)</li>
-        <li>if the player picks up a piece, he is forced to make a move with this piece. (this rule can be disabled)</li>
-        <li><b>CHECK: </b>if a king is endangered by his opponent, he is forced to get out of that situation.</li>
-    </ul>
-</div>
-
-<div>
-    <h3>end of the game</h3>
-    <ul>
-        <li><b>CHECKMATE: </b>the game ends with a winner, if - during the next move - the king of the other player would be killed.</li>
-        <li><b>STALEMATE: </b>if no valid moves are possible and the king is not in check, the game ends with a draw.</li>
-        <li><b>REMIS: </b>if too many meaningless moves (50 moves without a kill and no pawn moved or same position 3 times repeated) are made, the game will end with a draw. (this rule can be disabled)</li>
-    </ul>
-</div>
-
-<h2>Moves by piece</h2>
-<h3>pawns</h3>
-<div class="halfbox">
-    <img src="chess_screenshots_manual_pawns.png" alt="start situation">
-</div>
-<div class="halfbox">
-    <ul>
-        <li>pawns can move one step forward only. in case it is their first move, two steps forward are allowed. (see red arrows)</li>
-        <li>pawns can hit other pieces diagonally (just one step allowed, see purple arrow).</li>
-        <li><b>EN PASSANT MOVE: </b>if a pawn of the other player did a long starting move during the last turn and our pawn is next to it (left or right), 
-        we can kill the other pawn. see situation in blue square: if the black pawn is doing an en passant move, he would land on the field with the blue flash. (this move can be disabled on the settings screen)</li>
-        <li><b>PROMOTION: </b>if a pawn reaches the end of the board, it will become a queen.</li>
-    </ul>
-</div>
-
-<h3>rooks</h3>
-<div class="halfbox">
-    <img src="chess_screenshots_manual_rooks.png" alt="start situation">
-</div>
-<div class="halfbox">
-    <ul>
-        <li>rooks can move/hit straight in any direction. multiple steps at once are allowed, if the passed way is free.</li>
-        <li>rooks are also involved in the castling move. (see below)</li>
-    </ul>
-</div>
-
-<h3>knights</h3>
-<div class="halfbox">
-    <img src="chess_screenshots_manual_knights.png" alt="start situation">
-</div>
-<div class="halfbox">
-    <ul>
-        <li>knights can move/hit one step diagonally plus one step straight (away from the current position). both part-steps account as one step.</li>
-        <li>knights are actually the only pieces being able to leap over other pieces. (no matter which colour)</li>
-    </ul>
-</div>
-
-<h3>bishops</h3>
-<div class="halfbox">
-    <img src="chess_screenshots_manual_bishops.png" alt="start situation">
-</div>
-<div class="halfbox">
-    <ul>
-        <li>bishops can move/hit diagonally in any direction. multiple steps at once are allowed, if the passed way is free.</li>
-    </ul>
-</div>
-
-<h3>queens</h3>
-<div class="halfbox">
-    <img src="chess_screenshots_manual_queens.png" alt="start situation">
-</div>
-<div class="halfbox">
-    <ul>
-        <li>queens can move/hit straight and diagonally in any direction. multiple steps at once are allowed, if the passed way is free.</li>
-        <li>as you see the queen's got game, take care over her.</li>
-    </ul>
-</div>
-
-<h3>kings</h3>
-<div class="halfbox">
-    <img src="chess_screenshots_manual_kings.png" alt="start situation">
-</div>
-<div class="halfbox">
-    <ul>
-        <li>kings can move/hit straight and diagonally in any direction. just one step at once is allowed.</li>
-        <li>if a king is in check, the according player is forced to get out of the check situation.</li>
-        <li><b>CASTLING: </b>a king can do a castling move with a rook, as long as both of the pieces were never moved before and the way between is free.</br>
-        a castling move can only be done if the king is not in check at the beginning or during the castling move.</br>
-        a castling move has to be triggered by moving the king.</li>
+        <li>A piece can be captured if another piece is moved onto its square. (Exception: en passant move)</li>
+        <li>If the player picks up a piece, they must move it. (This rule can be disabled)</li>
+        <li><b>CHECK: </b>If the king is endangered by the opponent, the player must get out of check.</li>
     </ul>
 </div>
 
 <div>
-    <p class="p-wide">That's it. just come back here if you can't remember.</p>
+    <h3>End of the Game</h3>
+    <ul>
+        <li><b>CHECKMATE: </b>The game ends with a winner if, during the next move, the opponent's king would be captured.</li>
+        <li><b>STALEMATE: </b>If no valid moves are possible and the king is not in check, the game ends in a draw.</li>
+        <li><b>REMIS: </b>If too many meaningless moves are made (50 moves without a capture or pawn move, or the same position repeated 3 times), the game ends in a draw. (This rule can be disabled)</li>
+    </ul>
 </div>
+
+<h2>Piece Movements</h2>
+
+<h3>Pawn Moves</h3>
+<div class="halfbox">
+    <img src="chess_screenshots_manual_pawns.png" alt="Pawn Move">
+</div>
+<div class="halfbox">
+    <ul>
+        <li>Pawns can move one step forward. On their first move, they can move two steps forward.</li>
+        <li>Pawns can capture pieces diagonally, one step forward.</li>
+        <li><b>EN PASSANT: </b>If an opponent's pawn moves two squares from its starting position and lands next to our pawn, we can capture it as if it had moved only one square.</li>
+        <li><b>PROMOTION: </b>If a pawn reaches the opposite end of the board, it is promoted to a queen.</li>
+    </ul>
+</div>
+
+<h3>Rook Moves</h3>
+<div class="halfbox">
+    <img src="chess_screenshots_manual_rooks.png" alt="Rook Move">
+</div>
+<div class="halfbox">
+    <ul>
+        <li>Rooks move horizontally or vertically across any number of squares, as long as their path is not blocked.</li>
+        <li>Rooks are involved in the castling move.</li>
+    </ul>
+</div>
+
+<h3>Knight Moves</h3>
+<div class="halfbox">
+    <img src="chess_screenshots_manual_knights.png" alt="Knight Move">
+</div>
+<div class="halfbox">
+    <ul>
+        <li>Knights move in an "L" shape: two squares in one direction and then one square perpendicular.</li>
+        <li>Knights are the only pieces that can jump over other pieces.</li>
+    </ul>
+</div>
+
+<h3>Bishop Moves</h3>
+<div class="halfbox">
+    <img src="chess_screenshots_manual_bishops.png" alt="Bishop Move">
+</div>
+<div class="halfbox">
+    <ul>
+        <li>Bishops move diagonally across any number of squares, as long as their path is not blocked.</li>
+    </ul>
+</div>
+
+<h3>Queen Moves</h3>
+<div class="halfbox">
+    <img src="chess_screenshots_manual_queens.png" alt="Queen Move">
+</div>
+<div class="halfbox">
+    <ul>
+        <li>Queens move horizontally, vertically, or diagonally across any number of squares, as long as their path is not blocked.</li>
+    </ul>
+</div>
+
+<h3>King Moves</h3>
+<div class="halfbox">
+    <img src="chess_screenshots_manual_kings.png" alt="King Move">
+</div>
+<div class="halfbox">
+    <ul>
+        <li>Kings move one square in any direction: horizontally, vertically, or diagonally.</li>
+        <li>If a king is in check, the player must move the king out of check.</li>
+        <li><b>CASTLING: </b>A king can castle with a rook if neither piece has moved before and the squares between them are empty. Castling cannot be done if the king is in check or would move through or into check.</li>
+    </ul>
+</div>
+
+<p class="p-wide">That's all for now. Come back anytime if you need to refresh your memory!</p>
 
 <script>
 // Form validation function
@@ -162,26 +157,31 @@ function validateForm() {
     const messageDiv = document.getElementById("formMessage");
     messageDiv.innerHTML = "";
 
+    // Validate username
     if (username === "") {
         messageDiv.innerHTML += "<p style='color: red;'>Username is required.</p>";
         return false;
     }
 
+    // Validate email format
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (email === "" || !email.match(emailPattern)) {
         messageDiv.innerHTML += "<p style='color: red;'>Please enter a valid email.</p>";
         return false;
     }
 
+    // Validate game selection
     if (gameChoice === "") {
         messageDiv.innerHTML += "<p style='color: red;'>Please select a game.</p>";
         return false;
     }
 
+    // Success message
     messageDiv.innerHTML += "<p style='color: green;'>Form submitted successfully! Game preference: " + gameChoice + "</p>";
     return true;
 }
 
+// Game preference display
 document.getElementById("gameChoice").addEventListener("change", function() {
     const selectedGame = this.value;
     const messageDiv = document.getElementById("formMessage");
