@@ -10,6 +10,7 @@
     <servlet>
         <servlet-name>UserRegistrationServlet</servlet-name>
         <servlet-class>com.application.servlets.UserRegistrationServlet</servlet-class>
+        <load-on-startup>1</load-on-startup> <!-- Optional: If you want to initialize the servlet at the startup -->
     </servlet>
 
     <!-- Servlet Mapping -->
