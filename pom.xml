@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <!-- Group ID, Artifact ID and Version for your project -->
   <groupId>chess</groupId>
   <artifactId>chess</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -9,11 +9,9 @@
   <description>This is a chess game.</description>
 
   <build>
-    <!-- Directory structure for your source and test code -->
     <sourceDirectory>src/main/java</sourceDirectory>
     <testSourceDirectory>src/test/java</testSourceDirectory>
 
-    <!-- Resources -->
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -23,7 +21,7 @@
       </resource>
     </resources>
 
-    <!-- Maven Compiler plugin to set Java version -->
+    <!-- Additional build plugins or configurations can be added here -->
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -33,20 +31,21 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
+      <!-- Additional plugins like Tomcat plugin or others can be added here -->
     </plugins>
   </build>
 
-  <!-- Dependencies for Servlets, JSP, JSTL, etc. -->
   <dependencies>
-    <!-- Servlet API -->
+    <!-- Servlet API (provided by the container) -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
-      <scope>provided</scope> <!-- Provided means it will be provided by the servlet container like Tomcat -->
+      <scope>provided</scope>
     </dependency>
 
-    <!-- JSP API -->
+    <!-- JSP API (provided by the container) -->
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>javax.servlet.jsp-api</artifactId>
@@ -54,7 +53,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- JSTL (JavaServer Pages Standard Tag Library) -->
+    <!-- JSTL API (provided by the container) -->
     <dependency>
       <groupId>javax.servlet.jsp.jstl</groupId>
       <artifactId>javax.servlet.jsp.jstl-api</artifactId>
@@ -74,8 +73,8 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.1</version>
-      <scope>test</scope> <!-- Only used for testing -->
+      <scope>test</scope>
     </dependency>
   </dependencies>
-  
+
 </project>
