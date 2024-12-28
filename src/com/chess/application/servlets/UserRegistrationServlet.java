@@ -1,4 +1,4 @@
-package com.application.servlets; // Updated package name
+package com.application.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,8 +19,8 @@ public class UserRegistrationServlet extends HttpServlet {
         response.getWriter().println("<html><body>");
         response.getWriter().println("<h1>Welcome to User Registration Page</h1>");
         response.getWriter().println("<form method='POST' action='userRegistration'>");
-        response.getWriter().println("Username: <input type='text' name='username'><br>");
-        response.getWriter().println("Email: <input type='text' name='email'><br>");
+        response.getWriter().println("Username: <input type='text' name='username' required><br>");
+        response.getWriter().println("Email: <input type='email' name='email' required><br>");
         response.getWriter().println("<input type='submit' value='Register'>");
         response.getWriter().println("</form>");
         response.getWriter().println("</body></html>");
@@ -33,7 +33,19 @@ public class UserRegistrationServlet extends HttpServlet {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
 
-        // Process the data (for now, just display it on the page)
+        // Simple validation (ensure both fields are not empty)
+        if (username == null || username.isEmpty() || email == null || email.isEmpty()) {
+            response.setContentType("text/html");
+            response.getWriter().println("<html><body>");
+            response.getWriter().println("<h1>Registration Failed</h1>");
+            response.getWriter().println("<p>Please fill in all fields.</p>");
+            response.getWriter().println("<a href='userRegistration'>Go back to Registration</a>");
+            response.getWriter().println("</body></html>");
+            return;
+        }
+
+        // Store the data (this can be extended to save to a database or session)
+        // For now, we just display the data as a confirmation message
         response.setContentType("text/html");
         response.getWriter().println("<html><body>");
         response.getWriter().println("<h1>Registration Successful</h1>");
