@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/userRegistration")
+@WebServlet("/userRegistration") // URL pattern to access this servlet
 public class UserRegistrationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -44,13 +44,11 @@ public class UserRegistrationServlet extends HttpServlet {
             return;
         }
 
-        // Store the data (this can be extended to save to a database or session)
-        // For now, we just display the data as a confirmation message
-        response.setContentType("text/html");
-        response.getWriter().println("<html><body>");
-        response.getWriter().println("<h1>Registration Successful</h1>");
-        response.getWriter().println("<p>Username: " + username + "</p>");
-        response.getWriter().println("<p>Email: " + email + "</p>");
-        response.getWriter().println("</body></html>");
+        // Set the attributes to pass to the JSP page
+        request.setAttribute("username", username);
+        request.setAttribute("email", email);
+
+        // Forward the request to the JSP page
+        request.getRequestDispatcher("/WEB-INF/jsp/userConfirmation.jsp").forward(request, response);
     }
 }
