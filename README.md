@@ -107,7 +107,7 @@ Some other time, I will do further work here or start again from scratch.
 
 To clone the project, run the following command:
 
-git clone [here](https://github.com/lpapailiou/chess.git)
+git clone [here](https://github.com/SoaibAkhtar321/Chess-Master.git)
 
 For additional help, check out this [here](https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9)
 
