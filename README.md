@@ -36,7 +36,7 @@ Before the game starts, you will be able to adjust some parameters:
 ### The game
 ![screenshot of game](https://github.com/lpapailiou/chess/blob/master/src/com/chess/resources/img/chess_screenshots_game.png)
 
-The game can be played by clicking or by using drag&drop. For more information about how to handle the application see the [manual](https://github.com/lpapailiou/chess/blob/master/src/com/chess/resources/manual.html). If you are not very familiar with the chess game itself, there is an additional file which quickly explains the [rules](https://github.com/lpapailiou/chess/blob/master/src/com/chess/resources/rules.html).
+The game can be played by clicking or by using drag&drop. For more information about how to handle the application see the [manual](https://github.com/SoaibAkhtar321/Chess-Master/blob/8ca385bf2ec426b6a4df1d3d30a809e5613203df/src/com/chess/resources/manual.html). If you are not very familiar with the chess game itself, there is an additional file which quickly explains the [rules](https://github.com/SoaibAkhtar321/Chess-Master/blob/8ca385bf2ec426b6a4df1d3d30a809e5613203df/src/com/chess/resources/Rules_with_Validation(using_JS).html).
 
 #### The AI opponent
 The AI opponent was created by using a minimax algorithm with alpha-beta-pruning. This means, that the opponent will simulate a few moves ahead and then choose the move which seems to avoid the worst situation while maximizing the chance to win.
