@@ -1,9 +1,11 @@
 # README
 
-This is a __chess game__ written in java 8, using a javafx ui.
+#Chess Game
 
-The goal was to create a user-friendly game which allows the user to play against a computer opponent. 
-Also, games can be exported or imported in FEN or PGN.
+This is a chess game written in Java 8, using a JavaFX UI. The game allows you to play against a computer opponent 
+and features game saving and loading using FEN and PGN notations.
+
+
 
 ## Table of Contents
 1. [About the game](#about-the-game)  
@@ -14,7 +16,11 @@ Also, games can be exported or imported in FEN or PGN.
 		1.2.3 [Editing a game](#editing-a-game)  
 		1.2.4. [Thoughts about this project](#thoughts-about-this-project)  
 2. [Project structure](#project-structure)  
-3. [How to get it](#how-to-get-it)  
+3. [How to get it](#how-to-get-it)
+4.  Technologies Used
+5. Testing
+
+
 
 ## About the game
 ### Before you start the game
@@ -35,16 +41,18 @@ The game can be played by clicking or by using drag&drop. For more information a
 #### The AI opponent
 The AI opponent was created by using a minimax algorithm with alpha-beta-pruning. This means, that the opponent will simulate a few moves ahead and then choose the move which seems to avoid the worst situation while maximizing the chance to win.
 
-The algorithm takes following to account:
-* Recursion depth (steps of simulating moves ahead)
-* Heuristics to add recursion depth for the endgame
-* Piece values (e.g. a queen is valued higher than a pawn)
-* Piece position values (e.g. a knight is valued higher when positioned at the center of the board, as it has more move options there)
-* So called 'spasm-parameter', which will generate random moves occasionally to appear more human
-* Library of known chess openings to obtain a good starting position
-* Heuristics to avoid a a draw by stalemate
-* Heuristics to avoid a draw by threefold repetition
-* Heuristics to avoid a draw by 50 'moves of no value'
+Recursion depth: Simulates several moves ahead.
+
+Piece values: Higher values for more powerful pieces.
+
+Piece position: Knights and bishops perform better in central positions.
+
+Randomness: Occasionally, the AI makes random moves to simulate human behavior.
+
+Chess openings: The AI uses a library of chess openings for better initial positions.
+
+Avoids stalemates and draws: Implements heuristics to avoid draws by repetition or insufficient material.
+
 
 Depending on the rule and difficulty settings, the behavior of the AI opponent will change accordingly.
 Example: On the highest difficulty setting we have a recursion depth of 4, while on the lowest difficulty setting we have a no recursion at all.
@@ -97,8 +105,96 @@ Some other time, I will do further work here or start again from scratch.
 
 ## How to get it
 
-Clone the repository with:
+To clone the project, run the following command:
 
-    git clone https://github.com/lpapailiou/chess your-target-path
+git clone [here](https://github.com/lpapailiou/chess.git)
 
-For further help, click [here](https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9).
+For additional help, check out this [here](https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9)
+
+Here's a more concise version of the "Technologies Used" section for your README:
+
+
+---
+
+###Technologies Used
+
+This project integrates several technologies for a rich and interactive chess game:
+
+##Back-End:
+
+Java 8: Core logic and AI implementation.
+
+JavaFX: Graphical user interface for the game.
+
+Minimax Algorithm with Alpha-Beta Pruning: AI decision-making logic.
+
+JSP & Servlets: Web-based components for dynamic content rendering.
+
+
+##Front-End:
+
+HTML5: Structure for the user interface.
+
+CSS3: Styling and responsive design.
+
+JavaScript: Interactive elements like drag-and-drop.
+
+Bootstrap 4: Responsive, mobile-friendly layout.
+
+
+##Game Logic & Data:
+
+FEN: Board position representation for saving and loading games.
+
+PGN: Game move and metadata format for export and analysis.
+
+
+##Build & Dependency Management:
+
+Apache Maven: Project automation and dependency management.
+
+JUnit: Unit testing for game logic and AI.
+
+Mockito: Mocking framework for unit tests.
+
+
+##Version Control & Collaboration:
+
+Git: Version control.
+
+GitHub: Hosting platform for collaboration.
+
+
+##Additional Tools & Libraries:
+
+Log4j: Logging framework for debugging.
+
+Apache Commons: Utility functions for common tasks.
+
+JDBC: Database interaction for storing game data (if applicable).
+
+
+##Development Tools:
+
+IDE (IntelliJ IDEA, Eclipse,): For coding, debugging, and running the application.
+
+Postman/REST Clients: API testing (if the game has web-based features).
+
+###Testing
+
+Unit tests are implemented using JUnit for testing various components of the game. These tests focus on:
+
+Game logic: Ensuring rules, moves, and board states behave as expected.
+
+AI behavior: Verifying AI move generation and decision-making processes.
+
+UI components: Ensuring the interface correctly responds to user interactions.
+
+
+You can run the tests using Maven:
+mvn test
+
+This will run all unit tests defined in the project and provide a summary of the results.
+
+
+
