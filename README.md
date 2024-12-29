@@ -17,8 +17,8 @@ and features game saving and loading using FEN and PGN notations.
 		1.2.4. [Thoughts about this project](#thoughts-about-this-project)  
 2. [Project structure](#project-structure)  
 3. [How to get it](#how-to-get-it)
-4.  Technologies Used
-5. Testing
+4.  [Technologies Used](#Technology-Used)
+5. [Testing](Testing)
 
 
 
