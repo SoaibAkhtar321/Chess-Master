@@ -109,15 +109,8 @@ To clone the project, run the following command:
 
 git clone [here](https://github.com/SoaibAkhtar321/Chess-Master.git)
 
-For additional help, check out this [here](https://gist.github.com/lpapailiou/d4d63338ccb1413363970ac571aa71c9)
 
-Here's a more concise version of the "Technologies Used" section for your README:
-
-
----
-
-###Technologies Used
-
+##Technologies Used
 This project integrates several technologies for a rich and interactive chess game:
 
 ##Back-End:
@@ -180,7 +173,7 @@ IDE (IntelliJ IDEA, Eclipse,): For coding, debugging, and running the applicatio
 
 Postman/REST Clients: API testing (if the game has web-based features).
 
-###Testing
+##Testing
 
 Unit tests are implemented using JUnit for testing various components of the game. These tests focus on:
 
